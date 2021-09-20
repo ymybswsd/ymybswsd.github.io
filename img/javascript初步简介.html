@@ -147,12 +147,42 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 ></h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://image.baidu.com/search/detail?ct=503316480&amp;z=undefined&amp;tn=baiduimagedetail&amp;ipn=d&amp;word=%E5%94%AF%E7%BE%8E%E5%9B%BE%E7%89%87&amp;step_word=&amp;ie=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;hd=undefined&amp;latest=undefined&amp;copyright=undefined&amp;cs=70283546,422777313&amp;os=2722005114,1432084557&amp;simid=70283546,422777313&amp;pn=51&amp;rn=1&amp;di=201410&amp;ln=1281&amp;fr=&amp;fmq=1632136853640_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;is=0,0&amp;istype=0&amp;ist=&amp;jit=&amp;bdtype=0&amp;spn=0&amp;pi=0&amp;gsm=0&amp;objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%253A%252F%252Fup.enterdesk.com%252Fedpic%252Fa9%252F57%252Fbe%252Fa957bead49acb129a8400ecc70c4ec72.jpg%26refer%3Dhttp%253A%252F%252Fup.enterdesk.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1634728854%26t%3D84c2d496bdfe6d27f681360941b845f6&amp;rpstart=0&amp;rpnum=0&amp;adpicid=0&amp;nojc=undefined);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >JAVAscript初步认识</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                
+                <h1 id="JAVAscript改变html-css元素和属性"><a href="#JAVAscript改变html-css元素和属性" class="headerlink" title="JAVAscript改变html css元素和属性"></a>JAVAscript改变html css元素和属性</h1><p>在网页制作中css是非常重要的一个工具，它可以让原本呆呆的网页变得更加生动活泼，让原本简单的html表单页面变得更加炫酷。同样JavaScript也是非常需要的，因为网页最终是要提交数据的，那么javascript就起到它独特作用，他可以让原来要到服务器进行验证的数据不用再浪费时间，javascript就可以在浏览器上直接对用户所提交的数据进行初步验证，比如我们平时在网页内输入的账号和密码，他们都是有自己的规定的。</p>
+<p><img src="/img/Snipaste_2021-09-20_19-53-52.png"></p>
+<p>有的账号不能有字母，有的账号不能超过多少位啦什么的都是javascript在进行验证，当然还有一些其他的方法对网页提交的数据进行检验，但现在我们只要知道javascript也有这个功能，会使用它就行了。</p>
+<p>这里我们介绍javascript对html和css进行更改</p>
+<h3 id="一-我们先介绍我们今天第一个出厂人物——用javascript对html元素进行添加与删除"><a href="#一-我们先介绍我们今天第一个出厂人物——用javascript对html元素进行添加与删除" class="headerlink" title="一.我们先介绍我们今天第一个出厂人物——用javascript对html元素进行添加与删除"></a>一.我们先介绍我们今天第一个出厂人物——用javascript对html元素进行添加与删除</h3><p>​    首先我们先创建一个div盒子，然后再在div中创建两个p标签，div的id设置为div1，第一个p标签id设置为p1，第二个p标签设置为p2。然后再div下面创建两个button按钮用来对div中的p标签进行添加和删除——button（添加标签）button（减少标签），创建好的样子就是下面这样。<img src="/img/Snipaste_2021-09-20_20-02-07.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">	&lt;p id=&quot;p1&quot;&gt;这是第一个标签&lt;/p&gt;</span><br><span class="line">	&lt;p id=&quot;p2&quot;&gt;这是第二个标签&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;button&gt;添加元素&lt;/button&gt;</span><br><span class="line">&lt;button&gt;减少元素&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后样子我们是做出来了，但是点了还是没有反应，因为没有对button添加javascript，接下来我们开始对html添加javascript。</p>
+<p>​    我们在写css的时候会在head里写，javascript也写head里，首先<script>下载中间<script>，我们写一个方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function func1()&#123;</span><br><span class="line">	var newp = document.getELement(&quot;p&quot;);</span><br><span class="line">	var newtext = document.createText(&quot;这是新建的标签&quot;);</span><br><span class="line">	newp.appenChild(newtext);</span><br><span class="line">	newp.setAttribute(&quot;id&quot;,&quot;p3&quot;);		//对元素属性进行设置,也可以设置src和href</span><br><span class="line">	var getdiv = document.getElementById(&quot;div1&quot;);</span><br><span class="line">	getdiv.appenChild(newp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建标签的function就写好了,直接放在元素中用就行了。</p>
+<p>接下来我们写删除标签的function</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function func2()&#123;</span><br><span class="line">	var getdiv = document.getElement(&quot;div1&quot;);</span><br><span class="line">	var getp = document.getElement(&quot;p3&quot;);		//p3是刚才创建标签的时候设置的属性</span><br><span class="line">	getdiv.remove(getp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>function创建好，直接添加到需要出发的html元素中就可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;func1&quot;&gt;添加元素&lt;/button&gt;	//onclick的意思是当按钮被按下</span><br></pre></td></tr></table></figure>
+
+<p>对第二个buttoni进行添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;func2&quot;&gt;减少元素&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<p>好了试一下效果</p>
+<p><img src="/img/Snipaste_2021-09-20_20-23-10.png"></p>
+<p>点击第一个添加标签按钮，会多出一个标签。</p>
+<p><img src="/img/Snipaste_2021-09-20_20-24-30.png"></p>
+<p>看来添加元素是没有啥问题了，看看删除元素</p>
+<p><img src="/img/Snipaste_2021-09-20_20-25-44.png"></p>
+<p>点击减少标签，我们标签减少了一个，再点一个试试</p>
+<p><img src="/img/Snipaste_2021-09-20_20-26-52.png"></p>
+<p>看来是没问题了，到此我们的html元素的增加和删除就到此结束；</p>
+
             </div>
 
             <!-- Post Comments -->
@@ -214,8 +244,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://ymybswsd.github.io/group/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://ymybswsd.github.io/group/index.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://ymybswsd.github.io/img/javascript%E5%88%9D%E6%AD%A5%E7%AE%80%E4%BB%8B.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://ymybswsd.github.io/img/javascript%E5%88%9D%E6%AD%A5%E7%AE%80%E4%BB%8B.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
