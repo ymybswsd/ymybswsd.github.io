@@ -147,12 +147,40 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 ></h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://img0.baidu.com/it/u=3130982576,3949706364&amp;fm=26&amp;fmt=auto);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >JAVAscript对html元素属性进行改变</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                
+                <h2 id="fajgkajg"><a href="#fajgkajg" class="headerlink" title="fajgkajg"></a>fajgkajg</h2><p>这次我们将用javascript对html元素属性进行改变,这里我们建立了一个a标签，在a标签中我们没有设置href地址，给a标签付一个id以便一会寻找标签时使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;a1&quot;</span>&gt;</span>这是一个链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我们再创建一个button用于给a标签属性添加href</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;func1&quot;</span>&gt;</span>添加链接<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里所有显示的东西都做出来了，下面开始写function</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">	function func1()&#123;</span><br><span class="line">		var geta = document.getELementById(&quot;a1&quot;);</span><br><span class="line">		geta.setAttribute(&quot;href&quot;,&quot;https://www.baidu.com);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样如果我们点击button按钮就会触发func1</p>
+<p><img src="/img/Snipaste_2021-09-20_21-12-04.png"></p>
+<p>这里我们看到a标签是黑色的，因为它没有网络链接，所以它相当于是一个p标签，点了没有任何作用没有跳转。我们点击添加链接按钮，button就会调用func1方法回对a标签href进行添加网址，我们点击试一下。</p>
+<p><img src="/img/Snipaste_2021-09-20_21-16-04.png"></p>
+<p>发现a标签现在变蓝了证明href已经修改，a标签已经有了属性href，点击跳转网页……</p>
+<h2 id="既然我们可以改变a标签的属性，那么……"><a href="#既然我们可以改变a标签的属性，那么……" class="headerlink" title="既然我们可以改变a标签的属性，那么……"></a>既然我们可以改变a标签的属性，那么……</h2><p>​    既然我们可以改变a标签的属性，那么我们能不能改变img的属性呢？就像src属性。</p>
+<p>​    可不可以呢，我们试一下就知道。</p>
+<p>​    先创建一个img,设置id为img1</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/img/dog.png&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>写function对属性进行改变</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> getimg = <span class="built_in">document</span>.getElementById(<span class="string">&quot;img1&quot;</span>)；</span></span><br><span class="line"><span class="javascript">        getimg.src=<span class="string">&quot;/img/pig.jpg&quot;</span>;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们把img的图片dog.png改成pig.jpg</p>
+<p>看一下效果。</p>
+<p><img src="/img/Snipaste_2021-09-20_21-27-44.png"></p>
+<p>点击改变图片</p>
+<p><img src="/img/Snipaste_2021-09-20_21-28-28.png"></p>
+<p>图像切换功能就是这样实现的，不过现在只能切换一次就切换不回来了，我们可以在方法中对src进行加个判断判断一下，这样就能实现轮回图像切换了。</p>
+
             </div>
 
             <!-- Post Comments -->
@@ -214,8 +242,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://ymybswsd.github.io/group/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://ymybswsd.github.io/group/index.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://ymybswsd.github.io/2021/09/20/2021920-JAVAscript%E5%AF%B9html%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E6%94%B9%E5%8F%98-#-%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://ymybswsd.github.io/2021/09/20/2021920-JAVAscript%E5%AF%B9html%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E6%94%B9%E5%8F%98-#-%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
